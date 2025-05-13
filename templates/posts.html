@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All articles
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>All articles</h1>
+
+    <!-- ? Если нет ни одной статьи  -->
+     <!-- ? |length - позволяет получить длинну массива (в шаблонизаторе jinja) -->
+    {% if articles|length > 0 %}
+        {% for el in articles %}
+        <div class="alert alert-info">
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.intro }}</p>
+            <p><b>Date: {{ el.date.date() }}</b></p>
+            <a href="/posts/{{ el.id }}" class='btn btn-warning'>Detailed</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>We don't have article's :(</p>
+    {% endif %}
+</div>
+{% endblock %}

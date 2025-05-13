@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About page
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Create article</h1>
+    <form method="post">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Enter the name"><br>
+        <textarea name="intro" id="intro" class="form-control" placeholder="Enter anons"></textarea><br>
+        <textarea name="text" id="text" class="form-control" placeholder="Enter the main text"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Send"><br>
+    </form>
+</div>
+{% endblock %}
